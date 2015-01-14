@@ -1,7 +1,7 @@
 /**
  * Created by haverlantmatthias on 14/01/15.
  */
-class Money {
+class Money implements Expression{
 
     protected String currency;
     public int value;
@@ -32,6 +32,8 @@ class Money {
     public Money times(int multiplier){
         return new Money(this.value*multiplier,currency);
     };
+
+    public Expression plus (Money addend){ return new Money(value+ addend.getValue(),currency);}
 
     public boolean equals(Object object){
         Money money = (Money)object;
