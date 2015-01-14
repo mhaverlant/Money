@@ -1,3 +1,4 @@
+import junit.framework.Assert;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertFalse;
@@ -7,14 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class MoneyTest {
     @Test
     public void testEquality(){
-        Dollar five= new Dollar();
-        five.setValue(5);
-        Franc fivef=new Franc();
-        Franc vraif= new Franc();
-        Franc fauxf =new Franc();
-        fivef.setValue(5);
-        vraif.setValue(5);
-        fauxf.setValue(6);
+
         assertTrue(Money.dollar(5).equals(Money.dollar(5)));
         assertFalse((Money.dollar(5)).equals(Money.dollar(6)));
         assertTrue(Money.franc(5).equals(Money.franc(5)));
@@ -36,5 +30,10 @@ public class MoneyTest {
 
         assertEquals(Money.franc(10), five.times(2));
         assertEquals(Money.franc(15), five.times(3));
+    }
+    @Test
+    public void testCurrency(){
+        Assert.assertEquals("USD",Money.dollar(1).currency);
+        Assert.assertEquals("CHF",Money.franc(1).currency);
     }
 }

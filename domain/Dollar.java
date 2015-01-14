@@ -3,11 +3,20 @@
  */
 public class Dollar extends Money{
 
+    private String currency;
+
+    public Dollar(int value, String currency){
+        super(value,currency);
+    }
+
+    String currency(){
+        return currency;
+    }
+
+
 
     public Money times(int multiplier){
-        Dollar multi=new Dollar ();
-        multi.setValue(value*multiplier);
-        return multi;
+        return Money.dollar(this.value*multiplier);
     }
 
 }

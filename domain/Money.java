@@ -4,6 +4,9 @@
 abstract class Money {
 
     abstract Money times(int multiplier);
+    abstract String currency();
+
+    protected String currency;
     public int value;
 
     public void setValue(int value){
@@ -13,21 +16,30 @@ abstract class Money {
         return value;
     }
 
+    public String Currency(){
+        return currency;
+    }
+
+    public Money(int value,String currency){
+        this.value=value;
+        this.currency = currency;
+    }
+
 
     public boolean equals(Object object){
         Money money = (Money)object;
         return (this.value == money.getValue()
                 && this.getClass() == money.getClass());
     }
+
     public static Money dollar(int valeur){
-        Dollar dol= new Dollar();
-        dol.setValue(valeur);
-        return dol;
+        return new Dollar(valeur,"USD");
     }
+
     public static Money franc(int valeur){
-        Franc frc= new Franc();
-        frc.setValue(valeur);
-        return frc;
+        return new Franc (valeur,"CHF");
     }
+
+
 
 }

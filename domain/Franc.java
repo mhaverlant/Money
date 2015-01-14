@@ -3,9 +3,16 @@
  */
 public class Franc extends Money{
 
+    private String currency;
+
+    public Franc(int value,String currency){
+       super(value,currency);
+    }
+    String currency(){
+        return currency;
+    }
+
     public Money times(int multiplier){
-        Franc multi=new Franc ();
-        multi.setValue(this.value*multiplier);
-        return multi;
+        return Money.franc(this.value*multiplier);
     }
 }
