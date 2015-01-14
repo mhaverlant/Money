@@ -4,7 +4,7 @@
 public class Dollar extends Money{
 
 
-    public Dollar times(int multiplier){
+    public Money times(int multiplier){
         Dollar multi=new Dollar ();
         multi.setValue(value*multiplier);
         return multi;

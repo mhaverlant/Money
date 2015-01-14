@@ -1,7 +1,9 @@
 /**
  * Created by haverlantmatthias on 14/01/15.
  */
-public class Money {
+abstract class Money {
+
+    abstract Money times(int multiplier);
     public int value;
 
     public void setValue(int value){
@@ -17,4 +19,15 @@ public class Money {
         return (this.value == money.getValue()
                 && this.getClass() == money.getClass());
     }
+    public static Money dollar(int valeur){
+        Dollar dol= new Dollar();
+        dol.setValue(valeur);
+        return dol;
+    }
+    public static Money franc(int valeur){
+        Franc frc= new Franc();
+        frc.setValue(valeur);
+        return frc;
+    }
+
 }
