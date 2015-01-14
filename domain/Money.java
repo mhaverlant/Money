@@ -1,13 +1,11 @@
 /**
  * Created by haverlantmatthias on 14/01/15.
  */
-abstract class Money {
-
-    abstract Money times(int multiplier);
-    abstract String currency();
+class Money {
 
     protected String currency;
     public int value;
+
 
     public void setValue(int value){
         this.value=value;
@@ -25,11 +23,20 @@ abstract class Money {
         this.currency = currency;
     }
 
+    public String toString(){
+        return value+" "+currency;
+    }
+
+
+
+    public Money times(int multiplier){
+        return new Money(this.value*multiplier,currency);
+    };
 
     public boolean equals(Object object){
         Money money = (Money)object;
-        return (this.value == money.getValue()
-                && this.getClass() == money.getClass());
+        return (value == money.value
+                && Currency().equals(money.Currency()));
     }
 
     public static Money dollar(int valeur){

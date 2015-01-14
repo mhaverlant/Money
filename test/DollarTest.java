@@ -14,7 +14,7 @@ public class DollarTest {
         assertEquals(test, five.times(2));
 
         Dollar foistrois=new Dollar(15,"USD");
-        
+
         assertEquals(foistrois, five.times(3));
     }
 

@@ -11,8 +11,4 @@ public class Franc extends Money{
     String currency(){
         return currency;
     }
-
-    public Money times(int multiplier){
-        return Money.franc(this.value*multiplier);
-    }
 }
