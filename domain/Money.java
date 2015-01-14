@@ -40,11 +40,11 @@ class Money {
     }
 
     public static Money dollar(int valeur){
-        return new Dollar(valeur,"USD");
+        return new Money(valeur,"USD");
     }
 
     public static Money franc(int valeur){
-        return new Franc (valeur,"CHF");
+        return new Money(valeur,"CHF");
     }
 
 
