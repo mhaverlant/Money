@@ -4,27 +4,27 @@ import static junit.framework.Assert.assertFalse;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class DollarTest {
+public class FrancTest {
 
     @Test
     public void testMultiplication(){
-        Dollar five= new Dollar();
+        Franc five= new Franc();
         five.setValue(5);
 
-        Dollar test = new Dollar();
+        Franc test = new Franc();
         test.setValue(10);
         assertEquals(test, five.times(2));
 
-        Dollar foistrois=new Dollar();
+        Franc foistrois=new Franc();
         foistrois.setValue(15);
         assertEquals(foistrois, five.times(3));
     }
 
     @Test
     public void testEquality(){
-        Dollar five=new Dollar();
-        Dollar vrai= new Dollar();
-        Dollar faux =new Dollar();
+        Franc five=new Franc();
+        Franc vrai= new Franc();
+        Franc faux =new Franc();
         five.setValue(5);
         vrai.setValue(5);
         faux.setValue(6);
