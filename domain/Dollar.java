@@ -16,10 +16,10 @@ public class Dollar {
         multi.setValue(this.value*multiplier);
         return multi;
     }
-//pas besoin de faire la methode equals en java car le test passe correctement
-    /*public boolean equals(Object object){
+
+    public boolean equals(Object object){
         Dollar dollar = (Dollar)object;
         return this.value == dollar.getValue();
-    }*/
+    }
 
 }

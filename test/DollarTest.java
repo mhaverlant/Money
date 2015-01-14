@@ -15,6 +15,8 @@ public class DollarTest {
         product=five.times(3);
         assertEquals(15, product.getValue());
     }
+
+    @Test
     public void testEquality(){
         Dollar five=new Dollar();
         Dollar vrai= new Dollar();
