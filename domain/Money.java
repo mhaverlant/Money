@@ -14,6 +14,7 @@ public class Money {
 
     public boolean equals(Object object){
         Money money = (Money)object;
-        return this.value == money.getValue();
+        return (this.value == money.getValue()
+                && this.getClass() == money.getClass());
     }
 }

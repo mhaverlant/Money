@@ -22,6 +22,7 @@ public class MoneyTest {
         assertFalse(fivef.equals(fauxf));
         assertTrue(five.equals(vrai));
         assertFalse(five.equals(faux));
+        assertFalse(five.equals(fivef));
 
     }
 }
