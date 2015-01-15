@@ -10,8 +10,8 @@ public class Sum implements Expression {
         this.addend=addend;
     }
 
-    public Money reduce(String to){
-        int amount = augend.getValue() + addend.getValue();
-        return new Money(amount,to);
+    public Money reduce(Bank bank,String to){
+        int value = augend.getValue() + addend.getValue();
+        return new Money(value,to);
     }
 }
