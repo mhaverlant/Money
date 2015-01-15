@@ -2,16 +2,20 @@
  * Created by haverlantmatthias on 14/01/15.
  */
 public class Sum implements Expression {
-    Money addend;
-    Money augend;
+    Expression addend;
+    Expression augend;
 
-    Sum(Money augend,Money addend){
+    Sum(Expression augend,Expression addend){
         this.augend=augend;
         this.addend=addend;
     }
 
     public Money reduce(Bank bank,String to){
-        int value = augend.getValue() + addend.getValue();
+        int value = augend.reduce(bank,to).value + addend.reduce(bank,to).value;
         return new Money(value,to);
+    }
+
+    public Expression plus(Expression addend){
+        return null;
     }
 }
