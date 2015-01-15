@@ -33,7 +33,11 @@ class Money implements Expression{
         return new Money(this.value*multiplier,currency);
     };
 
-    public Expression plus (Money addend){ return new Money(value+ addend.getValue(),currency);}
+    public Expression plus (Money addend){ return new Sum(this,addend);}
+
+    public Money reduce(String to){
+        return this;
+    }
 
     public boolean equals(Object object){
         Money money = (Money)object;
